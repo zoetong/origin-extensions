@@ -1,5 +1,19 @@
 {
-  "cSpell.words": ["Vitesse"],
+  "cSpell.words": [
+    "composables",
+    "iconify",
+    "ionicons",
+    "nocheck",
+    "pixelarticons",
+    "preffix",
+    "unplugin",
+    "vicons",
+    "Vite",
+    "Vitesse",
+    "vueuse",
+    "webext",
+    "webextension"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "vite.autoStart": false,
   "editor.codeActionsOnSave": {
