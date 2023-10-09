@@ -9,10 +9,18 @@ import IconsResolver from 'unplugin-icons/resolver'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { FileSystemIconLoader } from 'unplugin-icons/loaders'
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import UnoCSS from 'unocss/vite'
 import { isDev, port, r } from './scripts/utils'
 import packageJson from './package.json'
 
+const VITE_ICON_PREFFIX = 'icon'
+const VITE_ICON_LOCAL_PREFFIX = 'icon-local'
+const localIconPath = `${r('src')}/assets/icons`
+
+/** 本地svg图标集合名称 */
+const collectionName = VITE_ICON_LOCAL_PREFFIX.replace(`${VITE_ICON_PREFFIX}-`, '')
 export const sharedConfig: UserConfig = {
   root: r('src'),
   resolve: {
@@ -47,14 +55,27 @@ export const sharedConfig: UserConfig = {
       resolvers: [
         NaiveUiResolver(),
         // auto import icons
-        IconsResolver({
-          prefix: '',
-        }),
+        IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFFIX }),
+
       ],
     }),
-
+    createSvgIconsPlugin({
+      iconDirs: [localIconPath],
+      symbolId: `${VITE_ICON_LOCAL_PREFFIX}-[dir]-[name]`,
+      inject: 'body-last',
+      customDomId: '__SVG_ICON_LOCAL__',
+    }),
     // https://github.com/antfu/unplugin-icons
-    Icons(),
+    Icons({
+      compiler: 'vue3',
+      customCollections: {
+        [collectionName]: FileSystemIconLoader(localIconPath, svg =>
+          svg.replace(/^<svg\s/, '<svg width="1em" height="1em" '),
+        ),
+      },
+      scale: 1,
+      defaultClass: 'inline-block',
+    }),
 
     // https://github.com/unocss/unocss
     UnoCSS(),

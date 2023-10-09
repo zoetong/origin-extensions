@@ -1,5 +1,19 @@
+<script lang="ts" setup>
+withDefaults(defineProps<Props>(), {
+  fill: false,
+})
+
+defineOptions({ name: 'SystemLogo' })
+
+interface Props {
+  /** logo是否填充 */
+  fill?: boolean
+}
+</script>
+
 <template>
-  <a class="icon-btn mx-2 text-2xl" rel="noreferrer" href="https://github.com/antfu/vitesse-webext" target="_blank" title="GitHub">
-    <pixelarticons-power />
-  </a>
+  <icon-local-logo-fill v-if="fill" />
+  <icon-local-logo v-else />
 </template>
+
+<style scoped></style>

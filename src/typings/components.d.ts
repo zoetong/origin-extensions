@@ -9,11 +9,13 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    IconLocalLogo: typeof import('~icons/local/logo')['default']
+    IconLocalLogoFill: typeof import('~icons/local/logo-fill')['default']
     Logo: typeof import('./../components/Logo.vue')['default']
     Menu: typeof import('./../components/Menu.vue')['default']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
     NMenu: typeof import('naive-ui')['NMenu']
     PixelarticonsPower: typeof import('~icons/pixelarticons/power')['default']
-    PixelarticonsZap: typeof import('~icons/pixelarticons/zap')['default']
     SharedSubtitle: typeof import('./../components/SharedSubtitle.vue')['default']
     SvgIcon: typeof import('./../components/svg-icon.vue')['default']
   }
