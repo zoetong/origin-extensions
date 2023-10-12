@@ -7,7 +7,7 @@ const menuOptions: MenuOption[] = [
   {
     label: '打开新标签',
     key: 'main',
-    icon: iconRender({ localIcon: 'logo' }),
+    icon: iconRender({ icon: 'bxs:planet' }),
   },
 
   {

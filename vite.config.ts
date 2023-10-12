@@ -10,14 +10,13 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 import { FileSystemIconLoader } from 'unplugin-icons/loaders'
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import UnoCSS from 'unocss/vite'
 import { isDev, port, r } from './scripts/utils'
 import packageJson from './package.json'
 
 const VITE_ICON_PREFFIX = 'icon'
 const VITE_ICON_LOCAL_PREFFIX = 'icon-local'
-const localIconPath = `${r('src')}/assets/icons`
+const localIconPath = `${r('src/assets/icons')}`
 
 /** 本地svg图标集合名称 */
 const collectionName = VITE_ICON_LOCAL_PREFFIX.replace(`${VITE_ICON_PREFFIX}-`, '')
@@ -26,6 +25,7 @@ export const sharedConfig: UserConfig = {
   resolve: {
     alias: {
       '~/': `${r('src')}/`,
+      '@': `${r('src')}/`,
     },
   },
   define: {
@@ -46,25 +46,6 @@ export const sharedConfig: UserConfig = {
       ],
       dts: r('src/typings/auto-imports.d.ts'),
     }),
-
-    // https://github.com/antfu/unplugin-vue-components
-    Components({
-      dirs: [r('src/components')],
-      // generate `components.d.ts` for ts support with Volar
-      dts: r('src/typings/components.d.ts'),
-      resolvers: [
-        NaiveUiResolver(),
-        // auto import icons
-        IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFFIX }),
-
-      ],
-    }),
-    createSvgIconsPlugin({
-      iconDirs: [localIconPath],
-      symbolId: `${VITE_ICON_LOCAL_PREFFIX}-[dir]-[name]`,
-      inject: 'body-last',
-      customDomId: '__SVG_ICON_LOCAL__',
-    }),
     // https://github.com/antfu/unplugin-icons
     Icons({
       compiler: 'vue3',
@@ -77,6 +58,17 @@ export const sharedConfig: UserConfig = {
       defaultClass: 'inline-block',
     }),
 
+    // https://github.com/antfu/unplugin-vue-components
+    Components({
+      dirs: [r('src/components')],
+      // generate `components.d.ts` for ts support with Volar
+      dts: r('src/typings/components.d.ts'),
+      resolvers: [
+        NaiveUiResolver(),
+        // auto import icons
+        IconsResolver({ customCollections: [collectionName], componentPrefix: VITE_ICON_PREFFIX }),
+      ],
+    }),
     // https://github.com/unocss/unocss
     UnoCSS(),
 

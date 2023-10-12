@@ -1,5 +1,5 @@
 import { h } from 'vue'
-import SvgIcon from '~/components/svg-icon.vue'
+import SvgIcon from '~/components/SvgIcon.vue'
 
 /**
  * 图标渲染
@@ -13,7 +13,7 @@ export const useIconRender = () => {
      */
     icon?: string
     /**
-     * 本地svg图标文件名(assets/svg-icon文件夹下)
+     * 本地svg图标文件名(assets/icons文件夹下)
      */
     localIcon?: string
     /** 图标颜色 */
@@ -31,7 +31,7 @@ export const useIconRender = () => {
    * 图标渲染
    * @param config
    * @property icon - 图标名称(iconify图标的名称), 例如：mdi-account 或者 mdi:account
-   * @property localIcon - 本地svg图标文件名(assets/svg-icon文件夹下)
+   * @property localIcon - 本地svg图标文件名(assets/icons文件夹下)
    * @property color - 图标颜色
    * @property fontSize - 图标大小
    */
