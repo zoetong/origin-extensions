@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { MenuOption } from 'naive-ui'
 import { useIconRender } from '~/composables'
 
 const { iconRender } = useIconRender()

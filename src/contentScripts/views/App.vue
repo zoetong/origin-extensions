@@ -13,12 +13,7 @@ const [show, toggle] = useToggle(false)
       m="y-auto r-2"
       transition="opacity duration-300"
       :class="show ? 'opacity-100' : 'opacity-0'"
-    >
-      <h1 class="text-lg">
-        Vitesse WebExt
-      </h1>
-      <SharedSubtitle />
-    </div>
+    />
     <button
       class="flex w-10 h-10 rounded-full shadow cursor-pointer border-none"
       bg="teal-600 hover:teal-700"

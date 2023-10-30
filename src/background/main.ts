@@ -1,4 +1,4 @@
-import { onMessage, sendMessage } from 'webext-bridge/background'
+import { sendMessage } from 'webext-bridge/background'
 import type { Tabs } from 'webextension-polyfill'
 
 // only on dev mode
@@ -39,16 +39,16 @@ browser.tabs.onActivated.addListener(async ({ tabId }) => {
   sendMessage('tab-prev', { title: tab.title }, { context: 'content-script', tabId })
 })
 
-onMessage('get-current-tab', async () => {
-  try {
-    const tab = await browser.tabs.get(previousTabId)
-    return {
-      title: tab?.title,
-    }
-  }
-  catch {
-    return {
-      title: undefined,
-    }
-  }
-})
+// onMessage('get-current-tab', async () => {
+//   try {
+//     const tab = await browser.tabs.get(previousTabId)
+//     return {
+//       title: tab?.title,
+//     }
+//   }
+//   catch {
+//     return {
+//       title: undefined,
+//     }
+//   }
+// })

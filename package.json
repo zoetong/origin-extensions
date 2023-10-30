@@ -31,13 +31,15 @@
     "postinstall": "simple-git-hooks",
     "typecheck": "tsc --noEmit"
   },
+  "dependencies": {
+    "vue-router": "^4.2.5"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.36.0",
     "@ffflorian/jszip-cli": "^3.4.1",
     "@iconify/json": "^2.2.61",
     "@iconify/vue": "4.1.1",
     "@playwright/test": "^1.33.0",
-    "@soybeanjs/vue-materials": "^0.2.0",
     "@types/fs-extra": "^11.0.1",
     "@types/node": "^18.16.5",
     "@types/webextension-polyfill": "^0.10.0",

@@ -10,6 +10,7 @@
     "nocheck",
     "pixelarticons",
     "preffix",
+    "sider",
     "soybeanjs",
     "unocss",
     "unplugin",
@@ -18,7 +19,8 @@
     "Vitesse",
     "vueuse",
     "webext",
-    "webextension"
+    "webextension",
+    "wechat"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "vite.autoStart": false,
