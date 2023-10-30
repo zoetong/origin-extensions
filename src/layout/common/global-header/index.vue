@@ -1,30 +1,32 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<script lang="ts" setup>
-// import { UserAvatar } from "./components";
-// import { useRouterPush } from "@/composables";
-// import logoImage from "@/assets/icons/logo.png";
+<script setup lang="ts">
+import { GlobalLogo } from '../index'
+import {
+  UserAvatar,
+} from './components'
+defineOptions({ name: 'GlobalHeader' })
 
-// const { toHome } = useRouterPush();
+// const theme = useThemeStore()
 </script>
 
 <template>
-  <div class="h-51px w-full bg-#fff shadow-h">
-    <div class="w-1156px m-auto h-51px">
-      <div class="h-51px lh-51px flex-y-center justify-between">
-        <!-- <img
-          :src="logoImage"
-          alt=""
-          class="h-30px cursor-pointer"
-          @click="toHome()"
-        /> -->
-        <!-- <UserAvatar /> -->
-      </div>
+  <dark-mode-container class="global-header flex-y-center h-full" :inverted="false">
+    <GlobalLogo :show-title="true" class="h-full w-220px" />
+
+    <div class="flex justify-end h-full">
+      <!-- <GlobalSearch /> -->
+      <!-- <GithubSite /> -->
+      <!-- <FullScreen /> -->
+      <!-- <ThemeMode /> -->
+      <!-- <ToggleLang /> -->
+      <!-- <SystemMessage /> -->
+      <!-- <SettingButton v-if="showButton" /> -->
+      <UserAvatar />
     </div>
-  </div>
+  </dark-mode-container>
 </template>
 
-<style  scoped>
-.shadow-h {
-  box-shadow: rgba(0, 21, 41, 0.08) 0px 1px 2px 0px;
+<style scoped>
+.global-header {
+  box-shadow: 0 1px 2px rgb(0 21 41 / 8%);
 }
 </style>

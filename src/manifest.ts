@@ -4,7 +4,7 @@ import type PkgType from '../package.json'
 import { isDev, isFirefox, port, r } from '../scripts/utils'
 
 export async function getManifest() {
-  const pkg = await fs.readJSON(r('package.json')) as typeof PkgType
+  const pkg = (await fs.readJSON(r('package.json'))) as typeof PkgType
 
   // update this file to update this manifest.json
   // can also be conditional based on your need
@@ -17,9 +17,8 @@ export async function getManifest() {
       default_icon: './assets/icon-512.png',
       default_popup: './dist/popup/index.html',
     },
-    options_ui: {
-      page: './dist/options/index.html',
-      open_in_tab: true,
+    chrome_url_overrides: {
+      newtab: './dist/main/index.html',
     },
     background: isFirefox
       ? {
@@ -34,21 +33,12 @@ export async function getManifest() {
       48: './assets/icon-512.png',
       128: './assets/icon-512.png',
     },
-    permissions: [
-      'tabs',
-      'storage',
-      'activeTab',
-      'bookmarks',
-    ],
+    permissions: ['tabs', 'storage', 'activeTab', 'bookmarks'],
     host_permissions: ['*://*/*'],
     content_scripts: [
       {
-        matches: [
-          '<all_urls>',
-        ],
-        js: [
-          'dist/contentScripts/index.global.js',
-        ],
+        matches: ['<all_urls>'],
+        js: ['dist/contentScripts/index.global.js'],
       },
     ],
     web_accessible_resources: [
@@ -58,8 +48,7 @@ export async function getManifest() {
       },
     ],
     content_security_policy: {
-      extension_pages: isDev
-        // this is required on dev for Vite script to load
+      extension_pages: isDev // this is required on dev for Vite script to load
         ? `script-src \'self\' http://localhost:${port}; object-src \'self\'`
         : 'script-src \'self\'; object-src \'self\'',
     },

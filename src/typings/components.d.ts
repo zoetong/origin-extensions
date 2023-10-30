@@ -9,10 +9,17 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Logo: typeof import('./../components/Logo.vue')['default']
+    DarkModeContainer: typeof import('./../components/common/dark-mode-container.vue')['default']
+    HoverContainer: typeof import('./../components/common/hover-container.vue')['default']
+    IconLocalAvatar: typeof import('~icons/local/avatar')['default']
+    IconLocalLogo: typeof import('~icons/local/logo')['default']
+    IconLocalLogoFill: typeof import('~icons/local/logo-fill')['default']
+    NDropdown: typeof import('naive-ui')['NDropdown']
+    NTooltip: typeof import('naive-ui')['NTooltip']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SharedSubtitle: typeof import('./../components/SharedSubtitle.vue')['default']
-    SvgIcon: typeof import('./../components/SvgIcon.vue')['default']
+    SharedSubtitle: typeof import('./../components/custom/shared-subtitle.vue')['default']
+    SvgIcon: typeof import('./../components/custom/svg-icon.vue')['default']
+    SystemLogo: typeof import('./../components/common/system-logo.vue')['default']
   }
 }

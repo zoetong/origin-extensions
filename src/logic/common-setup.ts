@@ -3,6 +3,7 @@ import type { App } from 'vue'
 export function setupApp(app: App) {
   // Inject a globally available `$app` object in template
   app.config.globalProperties.$app = {
+    name: 'origin-extensions',
     context: '123',
   }
 

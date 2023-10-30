@@ -1,7 +1,8 @@
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {
     $app: {
-      context: string
+      name: string,
+      context:StringifiedUtil
     }
   }
 }
