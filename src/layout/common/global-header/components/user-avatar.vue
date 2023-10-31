@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import type { DropdownOption } from 'naive-ui'
 
-import { useIconRender } from '~/composables'
+import { useIconRender } from '@/composables'
 
 defineOptions({ name: 'UserAvatar' })
 

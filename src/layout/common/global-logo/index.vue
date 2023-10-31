@@ -1,12 +1,11 @@
 <script setup lang="ts">
-defineProps<Props>()
-
-defineOptions({ name: 'GlobalLogo' })
-
 interface Props {
   /** 显示名字 */
   showTitle: boolean
 }
+defineProps<Props>()
+
+defineOptions({ name: 'GlobalLogo' })
 </script>
 
 <template>

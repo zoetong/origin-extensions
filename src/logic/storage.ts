@@ -1,5 +1,5 @@
-import { useStorageLocal } from '~/composables/useStorageLocal'
-import { themeSetting } from '~/settings'
+import { useStorageLocal } from '@/composables/useStorageLocal'
+import { themeSetting } from '@/settings'
 
 export const storageDemo = useStorageLocal('webext-demo', 'Storage Demo')
 
