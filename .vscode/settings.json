@@ -1,0 +1,36 @@
+{
+  "cSpell.words": [
+    "Attributify",
+    "composables",
+    "demi",
+    "esno",
+    "iconify",
+    "ionicons",
+    "kolorist",
+    "newtab",
+    "nocheck",
+    "pixelarticons",
+    "preffix",
+    "sider",
+    "soybeanjs",
+    "unocss",
+    "unplugin",
+    "vicons",
+    "Vite",
+    "Vitesse",
+    "vueuse",
+    "webext",
+    "webextension",
+    "wechat"
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "vite.autoStart": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "aiXcoder.showTrayIcon": true
+}
