@@ -19,7 +19,6 @@ declare module '@vue/runtime-core' {
     NDialogProvider: typeof import('naive-ui')['NDialogProvider']
     NDropdown: typeof import('naive-ui')['NDropdown']
     NLoadingBarProvider: typeof import('naive-ui')['NLoadingBarProvider']
-    NMenu: typeof import('naive-ui')['NMenu']
     NMessageProvider: typeof import('naive-ui')['NMessageProvider']
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     NTooltip: typeof import('naive-ui')['NTooltip']
