@@ -1,8 +1,16 @@
 <script setup lang="ts">
 import { GlobalLogo } from '../index'
 import {
-  UserAvatar,
+  FullScreen,
+  GithubSite,
+  SettingButton,
+  SystemMessage,
+  ThemeMode,
+  ToggleLang,
+  UserAvatar
+  ,
 } from './components'
+
 defineOptions({ name: 'GlobalHeader' })
 
 // const theme = useThemeStore()
@@ -13,13 +21,12 @@ defineOptions({ name: 'GlobalHeader' })
     <GlobalLogo :show-title="true" class="h-full w-220px" />
 
     <div class="flex justify-end h-full">
-      <!-- <GlobalSearch /> -->
-      <!-- <GithubSite /> -->
-      <!-- <FullScreen /> -->
-      <!-- <ThemeMode /> -->
-      <!-- <ToggleLang /> -->
-      <!-- <SystemMessage /> -->
-      <!-- <SettingButton v-if="showButton" /> -->
+      <GithubSite />
+      <FullScreen />
+      <ThemeMode />
+      <ToggleLang />
+      <SystemMessage />
+      <SettingButton />
       <UserAvatar />
     </div>
   </dark-mode-container>
