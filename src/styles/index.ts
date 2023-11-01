@@ -1,4 +1,4 @@
-import '@unocss/reset/tailwind.css'
-import './main.css'
 import 'uno.css'
-import './reset.css'
+import '@soybeanjs/vue-materials/dist/style.css'
+// import 'virtual:svgsvg-icons-register-icons-register'
+import '../styles/css/global.css'

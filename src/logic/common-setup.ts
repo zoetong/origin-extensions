@@ -1,5 +1,17 @@
 import type { App } from 'vue'
+import { createI18n } from 'vue-i18n'
+import messages from '@/locales/lang'
+import { localStg } from '@/utils'
+
 import { setupStore } from '@/store'
+import '../styles'
+
+const i18n = createI18n({
+  locale: localStg.get('lang') || 'zh-CN',
+  fallbackLocale: 'en',
+  messages,
+  legacy: false,
+})
 
 export function setupApp(app: App) {
   setupStore(app)
@@ -13,6 +25,6 @@ export function setupApp(app: App) {
   app.provide('app', app.config.globalProperties.$app)
 
   // Here you can install additional plugins for all contexts: popup, options page and content-script.
-  // example: app.use(i18n)
+  app.use(i18n)
   // example excluding content-script context: if (context !== 'content-script') app.use(i18n)
 }

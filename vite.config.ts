@@ -82,6 +82,13 @@ export const sharedConfig: UserConfig = {
       },
     },
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "./src/styles/scss/global.scss" as *;',
+      },
+    },
+  },
   optimizeDeps: {
     include: [
       'vue',
