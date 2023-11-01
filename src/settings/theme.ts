@@ -1,4 +1,11 @@
 import jsonSetting from './theme.json'
+import {
+  themeAnimateModeOptions,
+  themeHorizontalMenuPositionOptions,
+  themeLayoutModeOptions,
+  themeScrollModeOptions,
+  themeTabModeOptions,
+} from '@/constants'
 
 const themeColorList = [
   '#1890ff',
@@ -29,6 +36,15 @@ const themeColorList = [
 
 const defaultThemeSetting: Theme.Setting = {
   darkMode: false,
+  followSystemTheme: true,
+  isCustomizeDarkModeTransition: false,
+  layout: {
+    minWidth: 900,
+    mode: 'vertical',
+    modeList: themeLayoutModeOptions,
+  },
+  scrollMode: 'content',
+  scrollModeList: themeScrollModeOptions,
   themeColor: themeColorList[0],
   themeColorList,
   otherColor: {
@@ -38,6 +54,47 @@ const defaultThemeSetting: Theme.Setting = {
     error: '#f5222d',
   },
   isCustomizeInfoColor: false,
+  fixedHeaderAndTab: true,
+  showReload: true,
+  header: {
+    inverted: false,
+    height: 56,
+    crumb: {
+      visible: true,
+      showIcon: true,
+    },
+  },
+  tab: {
+    visible: true,
+    height: 44,
+    mode: 'chrome',
+    modeList: themeTabModeOptions,
+    isCache: true,
+  },
+  sider: {
+    inverted: false,
+    width: 220,
+    collapsedWidth: 64,
+    mixWidth: 80,
+    mixCollapsedWidth: 48,
+    mixChildMenuWidth: 200,
+  },
+  menu: {
+    horizontalPosition: 'flex-start',
+    horizontalPositionList: themeHorizontalMenuPositionOptions,
+  },
+  footer: {
+    visible: true,
+    fixed: false,
+    right: true,
+    height: 48,
+    inverted: false,
+  },
+  page: {
+    animate: true,
+    animateMode: 'fade-slide',
+    animateModeList: themeAnimateModeOptions,
+  },
 }
 
 export const themeSetting = (jsonSetting as Theme.Setting) || defaultThemeSetting

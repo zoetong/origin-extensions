@@ -1,6 +1,8 @@
 import type { App } from 'vue'
+import { setupStore } from '@/store'
 
 export function setupApp(app: App) {
+  setupStore(app)
   // Inject a globally available `$app` object in template
   app.config.globalProperties.$app = {
     name: 'origin-extensions',

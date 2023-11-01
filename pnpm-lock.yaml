@@ -50,6 +50,9 @@ devDependencies:
   chokidar:
     specifier: ^3.5.3
     version: 3.5.3
+  colord:
+    specifier: ^2.9.3
+    version: 2.9.3
   cross-env:
     specifier: ^7.0.3
     version: 7.0.3
@@ -80,6 +83,9 @@ devDependencies:
   npm-run-all:
     specifier: ^4.1.5
     version: 4.1.5
+  pinia:
+    specifier: ^2.1.7
+    version: 2.1.7(typescript@4.9.5)(vue@3.3.7)
   rimraf:
     specifier: ^4.4.1
     version: 4.4.1
@@ -1327,6 +1333,10 @@ packages:
       '@vue/shared': 3.3.7
     dev: true
 
+  /@vue/devtools-api@6.5.1:
+    resolution: {integrity: sha512-+KpckaAQyfbvshdDW5xQylLni1asvNSGme1JFs8I1+/H5pHEhqUKMEQD/qn3Nx5+/nycBq11qAEi8lk+LXI2dA==}
+    dev: true
+
   /@vue/reactivity-transform@3.3.7:
     resolution: {integrity: sha512-APhRmLVbgE1VPGtoLQoWBJEaQk4V8JUsqrQihImVqKT+8U6Qi3t5ATcg4Y9wGAPb3kIhetpufyZ1RhwbZCIdDA==}
     dependencies:
@@ -2120,6 +2130,10 @@ packages:
 
   /color-name@1.1.4:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
+    dev: true
+
+  /colord@2.9.3:
+    resolution: {integrity: sha512-jeC1axXpnb0/2nn/Y1LPuLdgXBLH7aDcHu4KEKfqw3CUhX7ZpfBSlPKyqXE6btIgEzfWtrX3/tyBCaCvXvMkOw==}
     dev: true
 
   /colorette@2.0.20:
@@ -5522,6 +5536,24 @@ packages:
   /pify@3.0.0:
     resolution: {integrity: sha512-C3FsVNH1udSEX48gGX1xfvwTWfsYWj5U+8/uK15BGzIGrKoUpghX8hWZwa/OFnakBiiVNmBvemTJR5mcy7iPcg==}
     engines: {node: '>=4'}
+    dev: true
+
+  /pinia@2.1.7(typescript@4.9.5)(vue@3.3.7):
+    resolution: {integrity: sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.4.0
+      typescript: '>=4.4.4'
+      vue: ^2.6.14 || ^3.3.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      '@vue/devtools-api': 6.5.1
+      typescript: 4.9.5
+      vue: 3.3.7(typescript@4.9.5)
+      vue-demi: 0.14.6(vue@3.3.7)
     dev: true
 
   /pino-abstract-transport@1.0.0:

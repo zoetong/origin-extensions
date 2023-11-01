@@ -7,19 +7,19 @@ const { iconRender } = useIconRender()
 const menuOptions: MenuOption[] = [
   {
     label: '打开新标签',
-    key: 'main',
+    key: 'normal',
     icon: iconRender({ icon: 'bxs:planet' }),
   },
 
   {
     label: '设置',
-    key: 'options',
+    key: 'setting',
     icon: iconRender({ icon: 'material-symbols:settings-rounded' }),
   },
 ]
 const menuActiveKey = ref<string | null>(null)
 const handleChangeMenu = (key: string) => {
-  chrome.tabs.create({ url: `./dist/${key}/index.html` })
+  chrome.tabs.create({ url: `./dist/main/index.html#/${key}` })
 }
 </script>
 
