@@ -55,14 +55,7 @@ export const useThemeStore = defineStore('theme-store', {
     toggleDarkMode() {
       this.darkMode = !this.darkMode
     },
-    /** 设置布局最小宽度 */
-    setLayoutMinWidth(minWidth: number) {
-      this.layout.minWidth = minWidth
-    },
-    /** 设置布局模式 */
-    setLayoutMode(mode: UnionKey.ThemeLayoutMode) {
-      this.layout.mode = mode
-    },
+
     /** 设置滚动模式 */
     setScrollMode(mode: UnionKey.ThemeScrollMode) {
       this.scrollMode = mode
@@ -92,31 +85,7 @@ export const useThemeStore = defineStore('theme-store', {
       if (height)
         this.header.height = height
     },
-    /** 设置头部面包屑可见 */
-    setHeaderCrumbVisible(visible: boolean) {
-      this.header.crumb.visible = visible
-    },
-    /** 设置头部面包屑图标可见 */
-    setHeaderCrumbIconVisible(visible: boolean) {
-      this.header.crumb.showIcon = visible
-    },
-    /** 设置多页签可见 */
-    setTabVisible(visible: boolean) {
-      this.tab.visible = visible
-    },
-    /** 设置多页签高度 */
-    setTabHeight(height: number | null) {
-      if (height)
-        this.tab.height = height
-    },
-    /** 设置多页签风格 */
-    setTabMode(mode: UnionKey.ThemeTabMode) {
-      this.tab.mode = mode
-    },
-    /** 设置多页签缓存 */
-    setTabIsCache(isCache: boolean) {
-      this.tab.isCache = isCache
-    },
+
     /** 侧边栏宽度 */
     setSiderWidth(width: number | null) {
       if (width)

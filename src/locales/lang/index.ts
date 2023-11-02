@@ -1,13 +1,11 @@
-import zhCN from './zh-cn';
-import en from './en';
-import kmKH from './km-KH';
+import zhCN from './zh-cn'
+import en from './en'
 
 const locales = {
   'zh-CN': zhCN,
   en,
-  'km-KH': kmKH
-};
+}
 
-export type LocaleKey = keyof typeof locales;
+export type LocaleKey = keyof typeof locales
 
-export default locales;
+export default locales

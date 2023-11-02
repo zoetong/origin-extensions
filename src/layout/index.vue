@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { AdminLayout } from '@soybeanjs/vue-materials'
-import { GlobalContent, GlobalFooter, GlobalHeader, SettingDrawer } from './common'
+import { GlobalContent, GlobalHeader, SettingDrawer } from './common'
 import { useAppStore, useThemeStore } from '@/store'
 import { useBasicLayout } from '@/composables'
 
@@ -37,9 +37,6 @@ const { mode, isMobile, headerProps, siderVisible, siderWidth, siderCollapsedWid
       <GlobalHeader v-bind="headerProps" />
     </template>
     <GlobalContent />
-    <template #footer>
-      <GlobalFooter />
-    </template>
   </AdminLayout>
   <n-back-top :key="theme.scrollMode" :listen-to="`#${app.scrollElId}`" class="z-100" />
   <SettingDrawer />

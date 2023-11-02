@@ -2,7 +2,6 @@ import jsonSetting from './theme.json'
 import {
   themeAnimateModeOptions,
   themeHorizontalMenuPositionOptions,
-  themeLayoutModeOptions,
   themeScrollModeOptions,
   themeTabModeOptions,
 } from '@/constants'
@@ -38,11 +37,6 @@ const defaultThemeSetting: Theme.Setting = {
   darkMode: false,
   followSystemTheme: true,
   isCustomizeDarkModeTransition: false,
-  layout: {
-    minWidth: 900,
-    mode: 'vertical',
-    modeList: themeLayoutModeOptions,
-  },
   scrollMode: 'content',
   scrollModeList: themeScrollModeOptions,
   themeColor: themeColorList[0],
@@ -59,10 +53,6 @@ const defaultThemeSetting: Theme.Setting = {
   header: {
     inverted: false,
     height: 56,
-    crumb: {
-      visible: true,
-      showIcon: true,
-    },
   },
   tab: {
     visible: true,

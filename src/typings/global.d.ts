@@ -23,3 +23,6 @@ interface Window {
   $message?: import('naive-ui').MessageProviderInst;
   $notification?: import('naive-ui').NotificationProviderInst;
 }
+interface Document {
+  startViewTransition?: (callback: () => Promise<void> | void) => ViewTransition;
+}

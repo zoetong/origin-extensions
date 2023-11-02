@@ -8,8 +8,6 @@ declare namespace Theme {
     followSystemTheme: boolean;
     /** 自定义暗黑动画过渡 */
     isCustomizeDarkModeTransition: boolean;
-    /** 布局样式 */
-    layout: Layout;
     /** 滚动模式 */
     scrollMode: UnionKey.ThemeScrollMode;
     /** 滚动模式列表 */
@@ -67,46 +65,9 @@ declare namespace Theme {
     inverted: boolean;
     /** 头部高度 */
     height: number;
-    /** 面包屑样式 */
-    crumb: Crumb;
-  }
-  /** 面包屑样式 */
-  interface Crumb {
-    /** 面包屑可见 */
-    visible: boolean;
-    /** 显示图标 */
-    showIcon: boolean;
+
   }
 
-  /** 标多页签样式 */
-  export interface Tab {
-    /** 多页签可见 */
-    visible: boolean;
-    /** 多页签高度 */
-    height: number;
-    /** 多页签风格 */
-    mode: UnionKey.ThemeTabMode;
-    /** 多页签风格列表 */
-    modeList: Common.OptionWithKey<UnionKey.ThemeTabMode>[];
-    /** 开启多页签缓存 */
-    isCache: boolean;
-  }
-
-  /** 侧边栏样式 */
-  interface Sider {
-    /** 侧边栏反转色 */
-    inverted: boolean;
-    /** 侧边栏宽度 */
-    width: number;
-    /** 侧边栏折叠时的宽度 */
-    collapsedWidth: number;
-    /** vertical-mix模式下侧边栏宽度 */
-    mixWidth: number;
-    /** vertical-mix模式下侧边栏折叠时的宽度 */
-    mixCollapsedWidth: number;
-    /** vertical-mix模式下侧边栏的子菜单的宽度 */
-    mixChildMenuWidth: number;
-  }
 
   /** 菜单样式 */
   interface Menu {
@@ -163,27 +124,7 @@ declare namespace App {
     i18nTitle?: string;
   };
 
-  /** 面包屑 */
-  type GlobalBreadcrumb = Omit<import('naive-ui').DropdownOption, 'icon'> & {
-    key: string;
-    label: string;
-    disabled: boolean;
-    routeName: string;
-    hasChildren: boolean;
-    icon?: import('vue').Component;
-    i18nTitle?: string;
-    options?: (import('naive-ui/es/dropdown/src/interface').DropdownMixedOption & { i18nTitle?: string })[];
-  };
 
-  /** 多页签Tab的路由 */
-  interface GlobalTabRoute
-    extends Pick<import('vue-router').RouteLocationNormalizedLoaded, 'name' | 'fullPath' | 'meta'> {
-    /** 滚动的位置 */
-    scrollPosition: {
-      left: number;
-      top: number;
-    };
-  }
 
   interface MessageTab {
     /** tab的key */
@@ -220,7 +161,7 @@ declare namespace App {
 }
 
 declare namespace I18nType {
-  type langType = 'en' | 'zh-CN' | 'km-KH';
+  type langType = 'en' | 'zh-CN' ;
 
   interface Schema {
     system: {
