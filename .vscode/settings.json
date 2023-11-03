@@ -36,5 +36,9 @@
     "*.css": "postcss"
   },
   "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "aiXcoder.showTrayIcon": true
+  "aiXcoder.showTrayIcon": true,
+  "i18n-ally.localesPaths": [
+    "src/locales",
+    "src/locales/lang"
+  ]
 }

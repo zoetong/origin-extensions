@@ -54,7 +54,6 @@ declare module '@vue/runtime-core' {
     NNotificationProvider: typeof import('naive-ui')['NNotificationProvider']
     NPopover: typeof import('naive-ui')['NPopover']
     NScrollbar: typeof import('naive-ui')['NScrollbar']
-    NSelect: typeof import('naive-ui')['NSelect']
     NSpace: typeof import('naive-ui')['NSpace']
     NSwitch: typeof import('naive-ui')['NSwitch']
     NTabPane: typeof import('naive-ui')['NTabPane']

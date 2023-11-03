@@ -1,10 +1,4 @@
 import jsonSetting from './theme.json'
-import {
-  themeAnimateModeOptions,
-  themeHorizontalMenuPositionOptions,
-  themeScrollModeOptions,
-  themeTabModeOptions,
-} from '@/constants'
 
 const themeColorList = [
   '#1890ff',
@@ -38,7 +32,7 @@ const defaultThemeSetting: Theme.Setting = {
   followSystemTheme: true,
   isCustomizeDarkModeTransition: false,
   scrollMode: 'content',
-  scrollModeList: themeScrollModeOptions,
+
   themeColor: themeColorList[0],
   themeColorList,
   otherColor: {
@@ -54,25 +48,7 @@ const defaultThemeSetting: Theme.Setting = {
     inverted: false,
     height: 56,
   },
-  tab: {
-    visible: true,
-    height: 44,
-    mode: 'chrome',
-    modeList: themeTabModeOptions,
-    isCache: true,
-  },
-  sider: {
-    inverted: false,
-    width: 220,
-    collapsedWidth: 64,
-    mixWidth: 80,
-    mixCollapsedWidth: 48,
-    mixChildMenuWidth: 200,
-  },
-  menu: {
-    horizontalPosition: 'flex-start',
-    horizontalPositionList: themeHorizontalMenuPositionOptions,
-  },
+
   footer: {
     visible: true,
     fixed: false,
@@ -80,11 +56,7 @@ const defaultThemeSetting: Theme.Setting = {
     height: 48,
     inverted: false,
   },
-  page: {
-    animate: true,
-    animateMode: 'fade-slide',
-    animateModeList: themeAnimateModeOptions,
-  },
+
 }
 
 export const themeSetting = (jsonSetting as Theme.Setting) || defaultThemeSetting
