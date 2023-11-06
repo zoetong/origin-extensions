@@ -30,9 +30,6 @@ const themeColorList = [
 const defaultThemeSetting: Theme.Setting = {
   darkMode: false,
   followSystemTheme: true,
-  isCustomizeDarkModeTransition: false,
-  scrollMode: 'content',
-
   themeColor: themeColorList[0],
   themeColorList,
   otherColor: {
@@ -42,18 +39,13 @@ const defaultThemeSetting: Theme.Setting = {
     error: '#f5222d',
   },
   isCustomizeInfoColor: false,
-  fixedHeaderAndTab: true,
   showReload: true,
   header: {
     inverted: false,
-    height: 56,
   },
 
   footer: {
     visible: true,
-    fixed: false,
-    right: true,
-    height: 48,
     inverted: false,
   },
 

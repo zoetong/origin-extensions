@@ -1,45 +1,20 @@
 <script setup lang="ts">
-import { AdminLayout } from '@soybeanjs/vue-materials'
-import { GlobalContent, GlobalHeader, SettingDrawer } from './common'
-import { useAppStore, useThemeStore } from '@/store'
-import { useBasicLayout } from '@/composables'
+import Layout from './business/layout.vue'
+import { GlobalContent, GlobalFooter, GlobalHeader } from './common'
 
 defineOptions({ name: 'BasicLayout' })
-
-const app = useAppStore()
-const theme = useThemeStore()
-
-const { mode, isMobile, headerProps, siderVisible, siderWidth, siderCollapsedWidth } = useBasicLayout()
 </script>
 
 <template>
-  <AdminLayout
-    :mode="mode"
-    :is-mobile="isMobile"
-    :scroll-mode="theme.scrollMode"
-    :scroll-el-id="app.scrollElId"
-    :full-content="app.contentFull"
-    :fixed-top="theme.fixedHeaderAndTab"
-    :header-height="theme.header.height"
-    :tab-visible="theme.tab.visible"
-    :tab-height="theme.tab.height"
-    :content-class="app.disableMainXScroll ? 'overflow-x-hidden' : ''"
-    :sider-visible="siderVisible"
-    :sider-collapse="app.siderCollapse"
-    :sider-width="siderWidth"
-    :sider-collapsed-width="siderCollapsedWidth"
-    :footer-visible="theme.footer.visible"
-    :fixed-footer="theme.footer.fixed"
-    :right-footer="theme.footer.right"
-    @click-mobile-sider-mask="app.setSiderCollapse(true)"
-  >
+  <Layout>
     <template #header>
-      <GlobalHeader v-bind="headerProps" />
+      <GlobalHeader />
+    </template>
+    <template #footer>
+      <GlobalFooter />
     </template>
     <GlobalContent />
-  </AdminLayout>
-  <n-back-top :key="theme.scrollMode" :listen-to="`#${app.scrollElId}`" class="z-100" />
-  <SettingDrawer />
+  </layout>
 </template>
 
 <style lang="scss">

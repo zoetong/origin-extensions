@@ -15,12 +15,11 @@ export const useThemeStore = defineStore('theme-store', {
     },
     /** naive-ui暗黑主题 */
     naiveTheme(state) {
-      return state.darkMode ? darkTheme : undefined
+      const theme = darkTheme
+      theme.common.primaryColor = '#ffffff'
+      return state.darkMode ? theme : undefined
     },
-    /** 页面动画模式 */
-    pageAnimateMode(state) {
-      return state.page.animate ? state.page.animateMode : undefined
-    },
+
   },
   actions: {
     /** 重置theme状态 */
@@ -42,10 +41,7 @@ export const useThemeStore = defineStore('theme-store', {
     setFollowSystemTheme(visible: boolean) {
       this.followSystemTheme = visible
     },
-    /** 设置自动跟随系统主题 */
-    setIsCustomizeDarkModeTransition(isCustomize: boolean) {
-      this.isCustomizeDarkModeTransition = isCustomize
-    },
+
     /** 自动跟随系统主题 */
     setAutoFollowSystemMode(darkMode: boolean) {
       if (this.followSystemTheme)
@@ -54,15 +50,6 @@ export const useThemeStore = defineStore('theme-store', {
     /** 切换/关闭 暗黑模式 */
     toggleDarkMode() {
       this.darkMode = !this.darkMode
-    },
-
-    /** 设置滚动模式 */
-    setScrollMode(mode: UnionKey.ThemeScrollMode) {
-      this.scrollMode = mode
-    },
-    /** 设置侧边栏反转色 */
-    setSiderInverted(isInverted: boolean) {
-      this.sider.inverted = isInverted
     },
     /** 设置头部反转色 */
     setHeaderInverted(isInverted: boolean) {
@@ -85,33 +72,6 @@ export const useThemeStore = defineStore('theme-store', {
       if (height)
         this.header.height = height
     },
-
-    /** 侧边栏宽度 */
-    setSiderWidth(width: number | null) {
-      if (width)
-        this.sider.width = width
-    },
-    /** 侧边栏折叠时的宽度 */
-    setSiderCollapsedWidth(width: number) {
-      this.sider.collapsedWidth = width
-    },
-    /** vertical-mix模式下侧边栏宽度 */
-    setMixSiderWidth(width: number | null) {
-      if (width)
-        this.sider.mixWidth = width
-    },
-    /** vertical-mix模式下侧边栏折叠时的宽度 */
-    setMixSiderCollapsedWidth(width: number) {
-      this.sider.mixCollapsedWidth = width
-    },
-    /** vertical-mix模式下侧边栏展示子菜单的宽度 */
-    setMixSiderChildMenuWidth(width: number) {
-      this.sider.mixChildMenuWidth = width
-    },
-    /** 设置水平模式的菜单的位置 */
-    setHorizontalMenuPosition(position: UnionKey.ThemeHorizontalMenuPosition) {
-      this.menu.horizontalPosition = position
-    },
     /** 设置底部是否显示 */
     setFooterVisible(isVisible: boolean) {
       this.footer.visible = isVisible
@@ -131,14 +91,6 @@ export const useThemeStore = defineStore('theme-store', {
     /** 设置底部高度 */
     setFooterInverted(inverted: boolean) {
       this.footer.inverted = inverted
-    },
-    /** 设置切换页面时是否过渡动画 */
-    setPageIsAnimate(animate: boolean) {
-      this.page.animate = animate
-    },
-    /** 设置页面过渡动画类型 */
-    setPageAnimateMode(mode: UnionKey.ThemeAnimateMode) {
-      this.page.animateMode = mode
     },
   },
 })

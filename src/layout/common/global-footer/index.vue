@@ -8,7 +8,7 @@ const theme = useThemeStore()
 
 <template>
   <dark-mode-container class="flex-center h-full" :inverted="theme.footer.inverted">
-    <span>Copyright ©2021 Soybean Admin</span>
+    <span>Copyright (c) 2023 tong</span>
   </dark-mode-container>
 </template>
 

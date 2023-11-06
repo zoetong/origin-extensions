@@ -12,8 +12,7 @@ defineOptions({ name: 'DarkModeSwitch' })
 interface Props {
   /** 暗黑模式 */
   dark?: boolean
-  /** 自定义暗黑模式动画过渡 */
-  customizeTransition?: boolean
+
 }
 
 interface Emits {
@@ -33,7 +32,7 @@ async function handleSwitch(event: MouseEvent) {
   const x = event.clientX
   const y = event.clientY
 
-  if (!props.customizeTransition || !document.startViewTransition) {
+  if (!document.startViewTransition) {
     darkMode.value = !darkMode.value
     return
   }

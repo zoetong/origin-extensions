@@ -31,7 +31,6 @@ declare module '@vue/runtime-core' {
     IconMdiWhiteBalanceSunny: typeof import('~icons/mdi/white-balance-sunny')['default']
     NaiveProvider: typeof import('./../components/common/naive-provider.vue')['default']
     NAvatar: typeof import('naive-ui')['NAvatar']
-    NBackTop: typeof import('naive-ui')['NBackTop']
     NBadge: typeof import('naive-ui')['NBadge']
     NButton: typeof import('naive-ui')['NButton']
     NColorPicker: typeof import('naive-ui')['NColorPicker']

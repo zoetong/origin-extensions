@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useAppStore, useThemeStore } from '@/store'
+import { useAppStore } from '@/store'
 
 withDefaults(defineProps<Props>(), {
   showPadding: true,
@@ -13,16 +13,12 @@ interface Props {
 }
 
 const app = useAppStore()
-const theme = useThemeStore()
 </script>
 
 <template>
   <transition
-    :name="theme.pageAnimateMode"
     mode="out-in"
     :appear="true"
-    @before-leave="app.setDisableMainXScroll(true)"
-    @after-enter="app.setDisableMainXScroll(false)"
   >
     <div
       v-if="app.reloadFlag"

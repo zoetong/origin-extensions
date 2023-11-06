@@ -4,7 +4,6 @@ import {
   FullScreen,
   GithubSite,
   SettingButton,
-  SystemMessage,
   ThemeMode,
   ToggleLang,
   UserAvatar
@@ -18,14 +17,13 @@ defineOptions({ name: 'GlobalHeader' })
 
 <template>
   <dark-mode-container class="global-header flex-y-center h-full" :inverted="false">
-    <GlobalLogo :show-title="true" class="h-full w-220px" />
+    <GlobalLogo :show-title="true" class="h-full w-220px justify-start p-l-4" />
 
     <div class="flex justify-end h-full">
       <GithubSite />
       <FullScreen />
       <ThemeMode />
       <ToggleLang />
-      <SystemMessage />
       <SettingButton />
       <UserAvatar />
     </div>

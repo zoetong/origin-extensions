@@ -12,7 +12,7 @@ function handleClickLink() {
 <template>
   <hover-container
     tooltip-content="github"
-    class="w-40px h-full"
+    class="w-40px h-full bg-transparent"
     :inverted="theme.header.inverted"
     @click="handleClickLink"
   >
