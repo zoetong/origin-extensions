@@ -59,35 +59,17 @@ export const useThemeStore = defineStore('theme-store', {
     setThemeColor(themeColor: string) {
       this.themeColor = themeColor
     },
-    /** 设置固定头部和多页签 */
-    setIsFixedHeaderAndTab(isFixed: boolean) {
-      this.fixedHeaderAndTab = isFixed
-    },
+
     /** 设置重载按钮可见状态 */
     setReloadVisible(visible: boolean) {
       this.showReload = visible
     },
-    /** 设置头部高度 */
-    setHeaderHeight(height: number | null) {
-      if (height)
-        this.header.height = height
-    },
+
     /** 设置底部是否显示 */
     setFooterVisible(isVisible: boolean) {
       this.footer.visible = isVisible
     },
-    /** 设置底部是否固定 */
-    setFooterIsFixed(isFixed: boolean) {
-      this.footer.fixed = isFixed
-    },
-    /** 设置底部是否固定 */
-    setFooterIsRight(right: boolean) {
-      this.footer.right = right
-    },
-    /** 设置底部高度 */
-    setFooterHeight(height: number) {
-      this.footer.height = height
-    },
+
     /** 设置底部高度 */
     setFooterInverted(inverted: boolean) {
       this.footer.inverted = inverted
