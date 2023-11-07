@@ -31,10 +31,7 @@ const invertedHeaderCss = computed(() => theme.footer.inverted ? 'bg-[#ffffff00]
       >
         <slot name="header" />
       </header>
-      <div
-
-        class="flex-shrink-0 overflow-hidden"
-      />
+      <div class="flex-shrink-0 overflow-hidden" />
 
       <!-- 主体 -->
       <main class="flex flex-col flex-grow">

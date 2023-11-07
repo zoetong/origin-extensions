@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Layout from './business/layout.vue'
-import { GlobalContent, GlobalFooter, GlobalHeader } from './common'
+import { GlobalContent, GlobalFooter, GlobalHeader, SettingDrawer } from './common'
 
 defineOptions({ name: 'BasicLayout' })
 </script>
@@ -15,6 +15,7 @@ defineOptions({ name: 'BasicLayout' })
     </template>
     <GlobalContent />
   </layout>
+  <SettingDrawer />
 </template>
 
 <style lang="scss">

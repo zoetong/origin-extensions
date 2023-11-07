@@ -33,7 +33,7 @@ const defaultThemeSetting: Theme.Setting = {
   themeColor: themeColorList[0],
   themeColorList,
   otherColor: {
-    info: '#2080f0',
+    info: '#AF52DE',
     success: '#52c41a',
     warning: '#faad14',
     error: '#f5222d',
