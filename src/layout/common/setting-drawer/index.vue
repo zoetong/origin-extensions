@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { DarkMode, PageFunc } from './components'
+import { DarkMode, PageFunc, ThemeBgSelect, ThemeColorSelect } from './components'
 import { useAppStore } from '@/store'
 
 defineOptions({ name: 'SettingDrawer' })
@@ -12,7 +12,8 @@ const app = useAppStore()
     <n-drawer-content title="主题配置" :native-scrollbar="false">
       <DarkMode />
       <PageFunc />
-      <!-- <ThemeColorSelect /> -->
+      <ThemeBgSelect />
+      <ThemeColorSelect />
     </n-drawer-content>
   </n-drawer>
   <!-- <DrawerButton /> -->

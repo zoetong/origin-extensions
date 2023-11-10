@@ -74,5 +74,9 @@ export const useThemeStore = defineStore('theme-store', {
     setFooterInverted(inverted: boolean) {
       this.footer.inverted = inverted
     },
+    /** 设置主题模式 */
+    setThemeMode(mode: UnionKey.ThemeBgMode) {
+      this.background.mode = mode
+    },
   },
 })

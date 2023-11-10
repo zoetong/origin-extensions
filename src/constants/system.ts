@@ -1,9 +1,9 @@
 import { transformObjectToOption } from './_shared'
 
-export const themeLayoutModeLabels: Record<UnionKey.ThemeLayoutMode, string> = {
-  'vertical': '左侧菜单模式',
-  'horizontal': '顶部菜单模式',
-  'vertical-mix': '左侧菜单混合模式',
-  'horizontal-mix': '顶部菜单混合模式',
+export const themeBgModeLabels: Record<UnionKey.ThemeBgMode, string> = {
+  'other': '自定义主题',
+  'default': '默认主题',
+  'prefabricated-cyberpunk': '预制的赛博朋克风格',
+  'prefabricated-mac': '预制的mac风格',
 }
-export const themeLayoutModeOptions = transformObjectToOption(themeLayoutModeLabels)
+export const themeBgModeOptions = transformObjectToOption(themeBgModeLabels)

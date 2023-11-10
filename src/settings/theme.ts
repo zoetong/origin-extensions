@@ -1,4 +1,7 @@
 import jsonSetting from './theme.json'
+import {
+  themeBgModeOptions,
+} from '@/constants'
 
 const themeColorList = [
   '#1890ff',
@@ -32,6 +35,11 @@ const defaultThemeSetting: Theme.Setting = {
   followSystemTheme: true,
   themeColor: themeColorList[0],
   themeColorList,
+  background: {
+    mode: 'default',
+    fit: 'initial',
+    modeList: themeBgModeOptions,
+  },
   otherColor: {
     info: '#AF52DE',
     success: '#52c41a',
@@ -43,7 +51,6 @@ const defaultThemeSetting: Theme.Setting = {
   header: {
     inverted: false,
   },
-
   footer: {
     visible: true,
     inverted: false,

@@ -9,14 +9,15 @@ import {
   UserAvatar
   ,
 } from './components'
+import { useThemeStore } from '@/store'
 
 defineOptions({ name: 'GlobalHeader' })
 
-// const theme = useThemeStore()
+const theme = useThemeStore()
 </script>
 
 <template>
-  <dark-mode-container class="global-header flex-y-center h-full" :inverted="false">
+  <dark-mode-container class="global-header flex-y-center h-full" :inverted="theme.header.inverted">
     <GlobalLogo :show-title="true" class="h-full w-220px justify-start p-l-4" />
 
     <div class="flex justify-end h-full">

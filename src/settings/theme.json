@@ -1,26 +1,24 @@
 {
   "darkMode": false,
   "followSystemTheme": true,
-
-  "layout": {
-    "minWidth": 900,
-    "mode": "vertical",
+  "background": {
+    "mode": "default",
     "modeList": [
       {
-        "value": "vertical",
-        "label": "左侧菜单模式"
+        "value": "default",
+        "label": "默认主题"
       },
       {
-        "value": "vertical-mix",
-        "label": "左侧菜单混合模式"
+        "value": "prefabricated-cyberpunk",
+        "label": "赛博朋克"
       },
       {
-        "value": "horizontal",
-        "label": "顶部菜单模式"
+        "value": "prefabricated-mac",
+        "label": "mac风格"
       },
       {
-        "value": "horizontal-mix",
-        "label": "顶部菜单混合模式"
+        "value": "other",
+        "label": "自定义主题"
       }
     ]
   },
@@ -59,21 +57,13 @@
     "error": "#f5222d"
   },
   "isCustomizeInfoColor": false,
-  "fixedHeaderAndTab": true,
+
   "showReload": true,
   "header": {
-    "inverted": false,
-    "height": 56,
-    "crumb": {
-      "visible": true,
-      "showIcon": true
-    }
+    "inverted": false
   },
   "footer": {
     "visible": true,
-    "fixed": false,
-    "right": true,
-    "height": 48,
     "inverted": false
   }
 }

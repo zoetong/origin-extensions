@@ -17,7 +17,7 @@ const otherColorBtnType = computed(() => (isInOther.value ? 'primary' : 'default
 
 <template>
   <n-divider title-placement="center">
-    系统主题
+    主题色
   </n-divider>
   <n-grid :cols="8" :x-gap="8" :y-gap="12">
     <n-grid-item v-for="color in theme.themeColorList" :key="color" class="flex-x-center">

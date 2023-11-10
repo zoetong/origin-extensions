@@ -18,7 +18,7 @@ const theme = useThemeStore()
 // 各部分的可见性
 const showHeader = computed(() => Boolean(slots.header))
 const showFooter = computed(() => Boolean(slots.footer) && theme.footer.visible)
-const invertedHeaderCss = computed(() => theme.footer.inverted ? 'bg-[#ffffff00]' : '')
+// const invertedHeaderCss = computed(() => theme.footer.inverted ? 'bg-[#ffffff00]' : '')
 </script>
 
 <template>
@@ -27,7 +27,7 @@ const invertedHeaderCss = computed(() => theme.footer.inverted ? 'bg-[#ffffff00]
       <!-- 头部 -->
       <header
         v-if="showHeader"
-        class="flex-shrink-0 h-64px bg-transparent"
+        class="flex-shrink-0 h-56px bg-transparent"
       >
         <slot name="header" />
       </header>

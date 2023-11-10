@@ -21,16 +21,17 @@ declare namespace Theme {
     header: Header;
     /** 底部样式 */
     footer: Footer;
-
+    /** 主题背景 */
+    background:Background
   }
   /** 布局样式 */
-  interface Layout {
-    /** 最小宽度 */
-    minWidth: number;
+  interface Background {
+    /** 背景效果 */
+    fit: UnionKey.ThemeBgFit;
     /** 布局模式 */
-    mode: UnionKey.ThemeLayoutMode;
+    mode: UnionKey.ThemeBgMode;
     /** 布局模式列表 */
-    modeList: Common.OptionWithKey<UnionKey.ThemeLayoutMode>[];
+    modeList: Common.OptionWithKey<UnionKey.mode>[];
   }
 
   /** 其他主题颜色 */
