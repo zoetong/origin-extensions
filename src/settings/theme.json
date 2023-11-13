@@ -2,7 +2,7 @@
   "darkMode": false,
   "followSystemTheme": true,
   "background": {
-    "mode": "default",
+    "mode": "prefabricated-cyberpunk",
     "modeList": [
       {
         "value": "default",
@@ -60,10 +60,10 @@
 
   "showReload": true,
   "header": {
-    "inverted": false
+    "inverted": true
   },
   "footer": {
     "visible": true,
-    "inverted": false
+    "inverted": true
   }
 }

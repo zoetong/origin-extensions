@@ -6,8 +6,7 @@ import {
   SettingButton,
   ThemeMode,
   ToggleLang,
-  UserAvatar
-  ,
+  UserAvatar,
 } from './components'
 import { useThemeStore } from '@/store'
 

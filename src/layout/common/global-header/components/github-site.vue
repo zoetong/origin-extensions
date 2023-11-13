@@ -14,6 +14,7 @@ function handleClickLink() {
     tooltip-content="github"
     class="w-40px h-full bg-transparent"
     :inverted="theme.header.inverted"
+    :in-dark="theme.darkMode"
     @click="handleClickLink"
   >
     <icon-mdi-github class="text-20px" />

@@ -4,6 +4,7 @@ const locale: LocaleMessages<I18nType.Schema> = {
   message: {
     system: {
       title: 'origin',
+      desc: 'let is start',
     },
 
   },

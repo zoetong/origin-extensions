@@ -26,12 +26,23 @@ declare namespace Theme {
   }
   /** 布局样式 */
   interface Background {
-    /** 背景效果 */
-    fit: UnionKey.ThemeBgFit;
+    
     /** 布局模式 */
     mode: UnionKey.ThemeBgMode;
     /** 布局模式列表 */
     modeList: Common.OptionWithKey<UnionKey.mode>[];
+    /** 背景图片选项 */
+    imagesOptions:ImageOptions
+  }
+
+  interface ImageOptions{ 
+    /** 是否网络图片 */
+    isNet: boolean;
+    /** 图片地址 */
+    url: alias
+    /** 背景效果 */
+    fit: UnionKey.ThemeBgFit;
+
   }
 
   /** 其他主题颜色 */
@@ -94,6 +105,7 @@ declare namespace I18nType {
   interface Schema {
     system: {
       title: string;
+      desc: string;
     };
 
   }

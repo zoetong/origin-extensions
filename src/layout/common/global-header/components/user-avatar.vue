@@ -7,9 +7,9 @@ const theme = useThemeStore()
 </script>
 
 <template>
-  <hover-container class="px-12px" :inverted="theme.header.inverted">
+  <hover-container class="px-12px" :inverted="theme.header.inverted" :in-dark="theme.darkMode">
     <icon-local-avatar class="text-32px" />
-    <span class="pl-8px text-16px font-medium">{{ 123 }}</span>
+    <!-- <span class="pl-8px text-16px font-medium">{{ 123 }}</span> -->
   </hover-container>
 </template>
 

@@ -23,7 +23,7 @@ const app = useAppStore()
     <div
       v-if="app.reloadFlag"
       :class="{ 'p-16px': showPadding }"
-      class="flex-grow bg-#f6f9f8 dark:bg-#101014 transition duration-300 ease-in-out"
+      class="flex-grow  transition duration-300 ease-in-out"
     />
   </transition>
 </template>

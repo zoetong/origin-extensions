@@ -27,7 +27,7 @@ const handleSelect = (key: string) => {
 </script>
 
 <template>
-  <hover-container class="w-40px h-full" :inverted="theme.header.inverted">
+  <hover-container class="w-40px h-full" :inverted="theme.header.inverted" :in-dark="theme.darkMode">
     <n-dropdown :options="options" trigger="hover" :value="language" @select="handleSelect">
       <icon-cil:language class="text-18px outline-transparent" />
     </n-dropdown>

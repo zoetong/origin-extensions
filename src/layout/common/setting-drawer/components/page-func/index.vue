@@ -12,15 +12,15 @@ const theme = useThemeStore()
     界面功能
   </n-divider>
   <n-space vertical size="large">
-    <SettingMenu label="头部透明">
+    <!-- <SettingMenu label="头部透明">
       <n-switch :value="theme.header.inverted" @update:value="theme.setHeaderInverted" />
-    </SettingMenu>
+    </SettingMenu> -->
     <SettingMenu label="显示底部">
       <n-switch :value="theme.footer.visible" @update:value="theme.setFooterVisible" />
     </SettingMenu>
-    <SettingMenu label="底部透明">
+    <!-- <SettingMenu label="底部透明">
       <n-switch :value="theme.footer.inverted" @update:value="theme.setFooterInverted" />
-    </SettingMenu>
+    </SettingMenu> -->
   </n-space>
 </template>
 

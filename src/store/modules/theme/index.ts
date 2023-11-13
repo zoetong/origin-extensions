@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { darkTheme } from 'naive-ui'
-import { getNaiveThemeOverrides, initThemeSettings } from './helpers'
+import { getNaiveThemeOverrides, getThemeBackground, initThemeSettings } from './helpers'
 import { localStg } from '@/utils'
 
 type ThemeState = Theme.Setting
@@ -19,7 +19,9 @@ export const useThemeStore = defineStore('theme-store', {
       theme.common.primaryColor = '#ffffff'
       return state.darkMode ? theme : undefined
     },
-
+    activeThemeBg(state) {
+      return getThemeBackground (state.background.mode)
+    },
   },
   actions: {
     /** 重置theme状态 */

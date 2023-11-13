@@ -7,6 +7,7 @@ const props = withDefaults(defineProps<Props>(), {
   placement: 'bottom',
   contentClass: '',
   inverted: false,
+  inDark: false,
 })
 
 defineOptions({ name: 'HoverContainer' })
@@ -20,12 +21,14 @@ interface Props {
   contentClass?: string
   /** 反转模式下 */
   inverted?: boolean
+  /** 黑夜模式下 */
+  inDark?: boolean
 }
 
 const showTooltip = computed(() => Boolean(props.tooltipContent))
 
 const contentClassName = computed(
-  () => `${props.contentClass} ${props.inverted ? 'hover:bg-primary' : 'hover:bg-#f6f6f6'}`,
+  () => `${props.contentClass} ${props.inverted ? 'hover:bg-primary_3' : (props.inDark ? 'hover:bg-#f6f6f6 ' : 'hover:bg-#f6f6f6 hover:color-primary')}`,
 )
 </script>
 
@@ -33,7 +36,7 @@ const contentClassName = computed(
   <div v-if="showTooltip">
     <n-tooltip :placement="placement" trigger="hover">
       <template #trigger>
-        <div class="flex-center h-full cursor-pointer dark:hover:bg-#333" :class="contentClassName">
+        <div class="flex-center h-full cursor-pointer dark:hover:bg-#333 rounded-6px" :class="contentClassName">
           <slot />
         </div>
       </template>

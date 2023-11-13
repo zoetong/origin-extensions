@@ -2,6 +2,9 @@ import type { GlobalThemeOverrides } from 'naive-ui'
 import { cloneDeep } from 'lodash-es'
 import { themeSetting } from '@/settings'
 import { addColorAlpha, getColorPalette, localStg } from '@/utils'
+import DefaultImage from '@/assets/images/default.png'
+import MacImage from '@/assets/images/mac.jpg'
+import CyberpunkImage from '@/assets/images/cyberpunk.png'
 
 /** 初始化主题配置 */
 export function initThemeSettings() {
@@ -75,5 +78,23 @@ export function getNaiveThemeOverrides(colors: Record<ColorType, string>): Globa
     LoadingBar: {
       colorLoading,
     },
+  }
+}
+/** 获取模式主题的背景图 */
+export function getThemeBackground(mode: UnionKey.ThemeBgMode): Theme.ImageOptions {
+  const themeBgImageOptions: { key: UnionKey.ThemeBgMode; value: Theme.ImageOptions }[] = [
+    { key: 'default', value: { isNet: false, url: DefaultImage, fit: 'initial' } },
+    { key: 'prefabricated-cyberpunk', value: { isNet: false, url: CyberpunkImage, fit: 'initial' } },
+    { key: 'prefabricated-mac', value: { isNet: false, url: MacImage, fit: 'initial' } },
+
+  ]
+  if (mode !== 'other') {
+    return themeBgImageOptions.find(i => i.key === mode)!.value
+  }
+  else {
+    const value: Theme.ImageOptions = {
+      isNet: false, url: DefaultImage, fit: 'initial',
+    }
+    return value
   }
 }

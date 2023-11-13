@@ -37,8 +37,8 @@ const defaultThemeSetting: Theme.Setting = {
   themeColorList,
   background: {
     mode: 'default',
-    fit: 'initial',
     modeList: themeBgModeOptions,
+    imagesOptions: { isNet: false, url: 'ImageDefault', fit: 'initial' },
   },
   otherColor: {
     info: '#AF52DE',
@@ -49,11 +49,11 @@ const defaultThemeSetting: Theme.Setting = {
   isCustomizeInfoColor: false,
   showReload: true,
   header: {
-    inverted: false,
+    inverted: true,
   },
   footer: {
     visible: true,
-    inverted: false,
+    inverted: true,
   },
 
 }

@@ -16,7 +16,7 @@ declare namespace UnionKey {
    * scale-down	保持原有尺寸比例。内容的尺寸与 none 或 contain 中的一个相同，取决于它们两个之间谁得到的对象尺寸会更小一些。
    * initial	设置为默认值，
    */
-  type ThemeBgFit ='contain'|'cover'|'scale-down'|'initial'
+  type ThemeBgFit ='contain'|'cover'|'initial'
   /**
    * 过渡动画类型
    * - zoom-fade: 渐变
