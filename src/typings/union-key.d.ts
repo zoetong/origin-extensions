@@ -27,4 +27,10 @@ declare namespace UnionKey {
    * - fade-scale: 缩放消退
    */
   type ThemeAnimateMode = 'zoom-fade' | 'zoom-out' | 'fade-slide' | 'fade' | 'fade-bottom' | 'fade-scale';
+
+  /**
+   * 使用的搜索引擎
+   * 'baidu' | 'google' | 'bing' | 'juejin' | 'zhihu' | 'github'
+   */
+  type searchEngine = 'baidu' | 'google' | 'bing' | 'juejin' | 'zhihu' | 'github'
 }

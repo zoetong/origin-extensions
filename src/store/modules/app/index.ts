@@ -9,17 +9,18 @@ interface AppState {
   reloadFlag: boolean
   /** 项目配置的抽屉可见状态 */
   settingDrawerVisible: boolean
-
+  /** 目前选择的搜索引擎 */
+  searchEngine: UnionKey.searchEngine
 }
 
 export const useAppStore = defineStore('app-store', {
   state: (): AppState => ({
+    searchEngine: 'google',
     contentFull: false,
     reloadFlag: true,
     settingDrawerVisible: false,
   }),
   actions: {
-
     /**
      * 重载页面
      * @param duration - 重载的延迟时间(ms)

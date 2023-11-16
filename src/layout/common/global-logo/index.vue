@@ -9,7 +9,7 @@ defineOptions({ name: 'GlobalLogo' })
 </script>
 
 <template>
-  <div class="flex-center w-full nowrap-hidden">
+  <div class="flex-center w-60px nowrap-hidden">
     <system-logo class="text-32px text-primary" :fill="true" />
     <!-- <h2 v-show="showTitle" class="pl-8px text-16px font-bold text-primary transition duration-300 ease-in-out">
       123

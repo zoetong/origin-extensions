@@ -9,6 +9,7 @@
     "iconify",
     "indexs",
     "ionicons",
+    "juejin",
     "kolorist",
     "newtab",
     "nocheck",
@@ -18,6 +19,7 @@
     "sider",
     "Simhei",
     "soybeanjs",
+    "tabler",
     "Uncapitalize",
     "unocss",
     "unplugin",
@@ -27,7 +29,8 @@
     "vueuse",
     "webext",
     "webextension",
-    "wechat"
+    "wechat",
+    "zhihu"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
   "vite.autoStart": false,

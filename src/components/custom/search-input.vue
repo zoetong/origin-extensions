@@ -1,0 +1,85 @@
+<script lang="ts" setup>
+import type { VNodeChild } from 'vue'
+import { useIconRender } from '@/composables'
+import { useAppStore } from '@/store'
+
+const props = defineProps<Props>()
+const { iconRender } = useIconRender()
+const app = useAppStore()
+
+const { isHeader } = toRefs(props)
+/**
+ * 搜素输入框
+ * - 有header模式和首屏模式，尺寸和样式会有所不同
+ */
+interface Props {
+  isHeader: Boolean
+}
+
+const showSearchModel = ref<boolean>(false)
+const SearchRef = ref<HTMLElement>()
+
+defineOptions({ name: 'SearchInput' })
+
+interface SearchOptions {
+  key: UnionKey.searchEngine
+  label: string
+  icon?: () => VNodeChild
+
+}
+const searchOptions: SearchOptions[] = [
+  { key: 'zhihu', label: '知乎', icon: iconRender({ icon: 'ri:zhihu-line', color: '#056de8' }) },
+  { key: 'baidu', label: '知乎', icon: iconRender({ icon: 'bx:bxl-baidu', color: '#2932e1' }) },
+  { key: 'google', label: '知乎', icon: iconRender({ icon: 'carbon:logo-google', color: '#fbbc05' }) },
+  { key: 'bing', label: '知乎', icon: iconRender({ icon: 'bi:bing', color: '#5ec9e9' }) },
+  { key: 'juejin', label: '知乎', icon: iconRender({ icon: 'tabler:brand-juejin', color: '#4b99ff' }) },
+  { key: 'github', label: '知乎', icon: iconRender({ icon: 'carbon:logo-github', color: '#1a1515' }) },
+]
+const searchIcon = computed(() => searchOptions.find(i => i.key === app.searchEngine)!.icon)
+const modelPosition = computed(() => {
+  const x = SearchRef.value!.getBoundingClientRect().x.toFixed(1)
+  const y = SearchRef.value!.getBoundingClientRect().y.toFixed(1)
+  return { left: `${x}px`, top: `${isHeader.value ? Number(y) + 44 : Number(y) + 64}px` }
+})
+
+function handleChooseSearch() {
+  showSearchModel.value = !showSearchModel.value
+}
+</script>
+
+<template>
+  <div class="flex-center w-full nowrap-hidden">
+    <div ref="SearchRef" class="w-500px inout-hover rounded-6 " :class="isHeader ? 'h-34px' : 'h-64px'">
+      <n-input round placeholder="" class=" h-34px b-#fff!">
+        <template #prefix>
+          <div class="cursor-pointer flex-center" @click="handleChooseSearch">
+            <component :is="searchIcon" :class="[`text-${isHeader ? '10px' : '20px'}`]" />
+            <icon-ic:round-arrow-drop-down class="arrow text-20px" :class="showSearchModel ? 'down' : 'up'" />
+          </div>
+        </template>
+      </n-input>
+    </div>
+  </div>
+  <n-modal v-model:show="showSearchModel">
+    <n-card class="w-500px h-200px fixed rounded-4" :style="{ top: modelPosition.top, left: modelPosition.left }">
+      222
+    </n-card>
+  </n-modal>
+</template>
+
+<style lang="scss" scoped>
+.inout-hover:hover{
+  box-shadow: 0 1px 6px rgba(32,33,36,.28);
+}
+.arrow{
+  font-size: 30px;
+  transition: all 0.5s ease-in-out
+}
+.up{
+
+  transform: rotateX(-180deg);
+}
+.down{
+  transform: rotateX(0);
+}
+</style>

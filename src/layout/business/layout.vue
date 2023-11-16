@@ -20,6 +20,8 @@ const showHeader = computed(() => Boolean(slots.header))
 const showFooter = computed(() => Boolean(slots.footer) && theme.footer.visible)
 
 const bgClass = computed(() => {
+  if (theme.darkMode)
+    return 'bg-#18181c'
   const activeTheme = theme.activeThemeBg
   let bgSize = ''
   if (activeTheme.fit === 'initial')

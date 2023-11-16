@@ -18,7 +18,7 @@ const theme = useThemeStore()
 <template>
   <dark-mode-container class="global-header flex-y-center h-full" :inverted="theme.header.inverted">
     <GlobalLogo :show-title="true" class="h-full w-220px justify-start p-l-4" />
-
+    <SearchInput :is-header="true" />
     <div class="flex justify-end h-full">
       <GithubSite />
       <FullScreen />
