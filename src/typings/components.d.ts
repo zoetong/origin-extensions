@@ -24,6 +24,7 @@ declare module '@vue/runtime-core' {
     IconLocalAvatar: typeof import('~icons/local/avatar')['default']
     IconLocalLogo: typeof import('~icons/local/logo')['default']
     IconLocalLogoFill: typeof import('~icons/local/logo-fill')['default']
+    'IconMaterialSymbols:checkCircleRounded': typeof import('~icons/material-symbols/check-circle-rounded')['default']
     IconMdiGithub: typeof import('~icons/mdi/github')['default']
     IconMdiMoonWaningCrescent: typeof import('~icons/mdi/moon-waning-crescent')['default']
     IconMdiWhiteBalanceSunny: typeof import('~icons/mdi/white-balance-sunny')['default']

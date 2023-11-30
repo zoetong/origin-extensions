@@ -45,6 +45,7 @@ export default defineConfig({
     'nowrap-hidden': 'whitespace-nowrap overflow-hidden',
     'ellipsis-text': 'nowrap-hidden text-ellipsis',
     'transition-base': 'transition-all duration-300 ease-in-out',
+
   },
   theme: {
     colors: {

@@ -56,5 +56,8 @@ export const useAppStore = defineStore('app-store', {
     setContentFull(full: boolean) {
       this.contentFull = full
     },
+    toggleChangeSearchEngine(key: UnionKey.searchEngine) {
+      this.searchEngine = key
+    },
   },
 })

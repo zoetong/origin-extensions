@@ -30,8 +30,8 @@ interface SearchOptions {
 const searchOptions: SearchOptions[] = [
   { key: 'zhihu', label: '知乎', icon: iconRender({ icon: 'ri:zhihu-line', color: '#056de8' }) },
   { key: 'baidu', label: '知乎', icon: iconRender({ icon: 'bx:bxl-baidu', color: '#2932e1' }) },
-  { key: 'google', label: '知乎', icon: iconRender({ icon: 'carbon:logo-google', color: '#fbbc05' }) },
-  { key: 'bing', label: '知乎', icon: iconRender({ icon: 'bi:bing', color: '#5ec9e9' }) },
+  { key: 'google', label: '知乎', icon: iconRender({ icon: 'logos:google-icon' }) },
+  { key: 'bing', label: '知乎', icon: iconRender({ icon: 'logos:bing', color: '#5ec9e9' }) },
   { key: 'juejin', label: '知乎', icon: iconRender({ icon: 'tabler:brand-juejin', color: '#4b99ff' }) },
   { key: 'github', label: '知乎', icon: iconRender({ icon: 'carbon:logo-github', color: '#1a1515' }) },
 ]
@@ -45,12 +45,15 @@ const modelPosition = computed(() => {
 function handleChooseSearch() {
   showSearchModel.value = !showSearchModel.value
 }
+function handleKeyUp() {
+
+}
 </script>
 
 <template>
   <div class="flex-center w-full nowrap-hidden">
     <div ref="SearchRef" class="w-500px inout-hover rounded-6 " :class="isHeader ? 'h-34px' : 'h-64px'">
-      <n-input round placeholder="" class=" h-34px b-#fff!">
+      <n-input round placeholder="" class=" h-34px b-#fff!" @keyup.enter="handleKeyUp">
         <template #prefix>
           <div class="cursor-pointer flex-center" @click="handleChooseSearch">
             <component :is="searchIcon" :class="[`text-${isHeader ? '10px' : '20px'}`]" />
@@ -61,8 +64,15 @@ function handleChooseSearch() {
     </div>
   </div>
   <n-modal v-model:show="showSearchModel">
-    <n-card class="w-500px h-200px fixed rounded-4" :style="{ top: modelPosition.top, left: modelPosition.left }">
-      222
+    <n-card class="w-500px fixed rounded-2" :style="{ top: modelPosition.top, left: modelPosition.left }">
+      <div class="w-full h-full grid gap-3 grid-col-80px">
+        <n-card v-for="item in searchOptions" :key="item.key" hoverable :embedded="item.key === app.searchEngine" class="w-80px h-80px rounded-2 cursor-pointer" content-style="padding:0;display:flex;justify-content: center;align-items: center;" @click="app.toggleChangeSearchEngine(item.key)">
+          <div class="w-60px h-60px relative flex-center">
+            <component :is="item.icon" class="text-60px block" />
+            <icon-material-symbols:check-circle-rounded v-if="item.key === app.searchEngine" class="text-20px c-primary absolute right--10px top--10px" />
+          </div>
+        </n-card>
+      </div>
     </n-card>
   </n-modal>
 </template>
@@ -81,5 +91,8 @@ function handleChooseSearch() {
 }
 .down{
   transform: rotateX(0);
+}
+.grid-col-80px{
+  grid-template-columns: repeat(auto-fill, 80px);
 }
 </style>
