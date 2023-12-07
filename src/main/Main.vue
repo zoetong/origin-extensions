@@ -1,6 +1,7 @@
 <script setup lang="ts">
 // import { useI18n } from 'vue-i18n'
 import { dateZhCN, zhCN } from 'naive-ui'
+import { MainSearch } from './components'
 import BasicLayout from '@/layout/index.vue'
 import { subscribeStore, useThemeStore } from '@/store'
 // import { localStg } from '@/utils'
@@ -32,7 +33,11 @@ onMounted(() => {
     class="h-full"
   >
     <naive-provider>
-      <BasicLayout />
+      <BasicLayout>
+        <template #main>
+          <MainSearch />
+        </template>
+      </BasicLayout>
     </naive-provider>
   </n-config-provider>
 </template>

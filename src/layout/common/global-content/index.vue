@@ -24,7 +24,9 @@ const app = useAppStore()
       v-if="app.reloadFlag"
       :class="{ 'p-16px': showPadding }"
       class="flex-grow  transition duration-300 ease-in-out"
-    />
+    >
+      <slot name="container" />
+    </div>
   </transition>
 </template>
 

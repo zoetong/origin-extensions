@@ -13,7 +13,11 @@ defineOptions({ name: 'BasicLayout' })
     <template #footer>
       <GlobalFooter />
     </template>
-    <GlobalContent :show-padding="false" />
+    <GlobalContent :show-padding="false">
+      <template #container>
+        <slot name="main" />
+      </template>
+    </GlobalContent>
   </layout>
   <SettingDrawer />
 </template>

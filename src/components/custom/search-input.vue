@@ -39,9 +39,14 @@ const searchIcon = computed(() => searchOptions.find(i => i.key === app.searchEn
 const modelPosition = computed(() => {
   const x = SearchRef.value!.getBoundingClientRect().x.toFixed(1)
   const y = SearchRef.value!.getBoundingClientRect().y.toFixed(1)
-  return { left: `${x}px`, top: `${isHeader.value ? Number(y) + 44 : Number(y) + 64}px` }
+  return { left: `${x}px`, top: `${isHeader.value ? Number(y) + 44 : Number(y) + 78}px` }
 })
-
+const searchInputStyle = computed(() => {
+  // 搜索框的class样式
+  const headerSearch = { search: 'w-500px inout-hover h-34px', icon: 'text-10px', card: 'w-500px' }
+  const noHeaderSearch = { search: 'w-70% inout-hover  h-68px search-main', icon: 'text-20px', card: 'w-70%' }
+  return isHeader.value ? headerSearch : noHeaderSearch
+})
 function handleChooseSearch() {
   showSearchModel.value = !showSearchModel.value
 }
@@ -52,19 +57,19 @@ function handleKeyUp() {
 
 <template>
   <div class="flex-center w-full nowrap-hidden">
-    <div ref="SearchRef" class="w-500px inout-hover rounded-6 " :class="isHeader ? 'h-34px' : 'h-64px'">
-      <n-input round placeholder="" class=" h-34px b-#fff!" @keyup.enter="handleKeyUp">
+    <div ref="SearchRef" :class="searchInputStyle.search">
+      <n-input round placeholder="" @keyup.enter="handleKeyUp">
         <template #prefix>
           <div class="cursor-pointer flex-center" @click="handleChooseSearch">
-            <component :is="searchIcon" :class="[`text-${isHeader ? '10px' : '20px'}`]" />
-            <icon-ic:round-arrow-drop-down class="arrow text-20px" :class="showSearchModel ? 'down' : 'up'" />
+            <component :is="searchIcon" :class="searchInputStyle.icon" />
+            <icon-ic:round-arrow-drop-down class="arrow" :class="showSearchModel ? 'down text-20px' : 'up text-30px'" />
           </div>
         </template>
       </n-input>
     </div>
   </div>
   <n-modal v-model:show="showSearchModel">
-    <n-card class="w-500px fixed rounded-2" :style="{ top: modelPosition.top, left: modelPosition.left }">
+    <n-card class="w-500px fixed rounded-2" :class="searchInputStyle.card" :style="{ top: modelPosition.top, left: modelPosition.left }">
       <div class="w-full h-full grid gap-3 grid-col-80px">
         <n-card v-for="item in searchOptions" :key="item.key" hoverable :embedded="item.key === app.searchEngine" class="w-80px h-80px rounded-2 cursor-pointer" content-style="padding:0;display:flex;justify-content: center;align-items: center;" @click="app.toggleChangeSearchEngine(item.key)">
           <div class="w-60px h-60px relative flex-center">
@@ -94,5 +99,21 @@ function handleKeyUp() {
 }
 .grid-col-80px{
   grid-template-columns: repeat(auto-fill, 80px);
+}
+:deep(.search-main .n-input){
+  border-radius: 3rem;
+  height:68px;
+  .n-input-wrapper{
+    .n-input__prefix{
+      svg{
+        font-size:36px
+      }
+    }
+    .n-input__input{
+      .n-input__input-el{
+        height: 68px;font-size: 30px;
+      }
+    }
+  }
 }
 </style>
